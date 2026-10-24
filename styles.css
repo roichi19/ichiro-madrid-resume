@@ -1,10 +1,10 @@
 header {
-    text-align: center;
-    font-family: Verdana, "consolas";
-    font-style: normal;
+  text-align: center;
+  font-family: Verdana, "consolas";
+  font-style: normal;
 }
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', 'roboto';
   background: #fffafa;       
   color: #333;
   max-width: 900px;
@@ -16,6 +16,7 @@ body {
   font-weight: 500;
   font-size: 1.8rem;
   color: #111;
+  margin-bottom: 12px;
 }
 .card {
   background: white;
@@ -23,6 +24,20 @@ body {
   border-radius: 16px;
   padding: 20px 24px;
   margin-bottom: 16px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.small-card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  padding: 12px 16px;
+  padding-bottom: 2px;
+  margin-bottom: 12px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.card:hover, .small-card:hover {
+  transform: scale(1.02);                    /* Subtler scale to avoid overflow */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); /* soft shadow */
 }
 .card-header {
   display: flex;
@@ -50,17 +65,49 @@ body {
   line-height: 1.6;
 }
 footer {
-    font-family: Verdana, "consolas";
-    font-weight: light;
-    display: flex;
-    justify-content: center;
-}
-.card {
-  /* ...your existing card styles... */
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  font-size: 1rem;
+  color: #555;
+  margin-top: 40px;
+  font-family: Verdana, "consolas";
+  display: flex;
+  justify-content: center;
 }
 
-.card:hover {
-  transform: scale(1.02);                    /* slightly bigger */
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); /* soft shadow */
+/* Skills Container & Layout Fixes */
+.skills-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* Space between Technical and Soft skills groups */
+}
+
+.skill-category h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 8px; /* Minimizes gap between subheading and badges */
+}
+
+.skill-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill-badge {
+  background-color: #f1f5f9;
+  color: #1e293b;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: 1px solid #e2e8f0;
+  white-space: nowrap; /* Prevents text from breaking mid-word */
+  transition: all 0.2s ease;
+}
+
+.skill-badge:hover {
+  background-color: #e2e8f0;
+  border-color: #cbd5e1;
+  transform: translateY(-2px);
 }
